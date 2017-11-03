@@ -1,0 +1,74 @@
+--------------------------------------------------------------
+@Component({
+  selector: 'course-list',
+  templateUrl: 'app/students/course-list/course-list.component.html',
+  styleUrls:['app/students/course-list/course-list.component.css']
+})
+export class CouresListComponent implement OnInit {
+  constructor() {
+  }
+  ngOnInnit(){
+
+  }
+}
+--------------------------------------------------------------
+<div class="row">
+  <button class="btn btn-primary" type="button">
+    Enroll Course <span class="badge">4</span>
+  </button>
+</div>
+--------------------------------------------------------------
+<course-list></course-list>
+--------------------------------------------------------------
+Enroll Course <span class="badge">{{count}}</span>
+--------------------------------------------------------------
+@Input() count:number;
+--------------------------------------------------------------
+<course-list [count]="inputCount"></course-list>
+--------------------------------------------------------------
+this.inputCount = 15;
+--------------------------------------------------------------
+export class Course{
+  courseId:string;
+  courseName:string;
+  id:number;
+}
+--------------------------------------------------------------
+enrolledCourse?:Course[];
+--------------------------------------------------------------
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Course ID</th>
+        <th>Course Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of courses; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{course.courseId}}</td>
+        <td>{{course.courseName}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+--------------------------------------------------------------
+@Input('enrolledCourse') courses:Course;
+--------------------------------------------------------------
+<course-list [count]="student?.enrolledCourse.length" [enrolledCourse]="student?.enrolledCourse"></course-list>
+--------------------------------------------------------------
+<my-app>Loading...</my-app>
+--------------------------------------------------------------
+templateUrl : './app.component.html'
+--------------------------------------------------------------
+  "styles.css","../node_modules/bootstrap/dist/css/bootstrap.css"
+],
+"scripts": [
+  "../node_modules/jquery/dist/jquery.js",
+  "../node_modules/bootstrap/dist/js/bootstrap.js"
+]
+--------------------------------------------------------------
+--------------------------------------------------------------
+--------------------------------------------------------------
