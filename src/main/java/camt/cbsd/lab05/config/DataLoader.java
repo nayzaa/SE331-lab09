@@ -15,6 +15,7 @@ import javax.transaction.Transactional;
 @ConfigurationProperties(prefix = "server")
 @Component
 public class DataLoader implements ApplicationRunner {
+    @Autowired
     StudentDao studentDao;
 
     @Autowired

@@ -6,7 +6,7 @@ import {Course} from "../course";
   templateUrl: './course-list.component.html',
   styleUrls:['./course-list.component.css']
 })
-export class CouresListComponent implements OnInit {
+export class CourseListComponent implements OnInit {
   constructor() {
   }
   @Input() count:number;
